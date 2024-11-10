@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./fonts/font.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-container">
+            <div id="menu">
+                <p id="textMenu">یک گزینه انتخاب کنید</p>
+                <i class="fa fa-angle-down rotate"></i>
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">منوی اصلی</li>
+                <li class="options">ورود</li>
+                <li class="options">پنل کاربری</li>
+                <li class="options">تنظیمات</li>
+                <li class="options">ارتباط با ما</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let Menu = document.querySelector('#menu')
+        let textMenu = document.querySelector('#textMenu')
+        let options = document.querySelectorAll('.options')
+        let Icon = document.querySelector('.fa')
+        let list = document.querySelector('#list')
+
+        Menu.onclick = function() {
+            list.classList.toggle('hide')
+            Icon.classList.toggle('rotate')
+        }
+
+        for(option of options) {
+            option.onclick = function() {
+                textMenu.innerHTML = this.textContent
+                list.classList.toggle('hide')
+                Icon.classList.toggle('rotate')
+            }
+        }
+    </script>
+</body>
+</html>
